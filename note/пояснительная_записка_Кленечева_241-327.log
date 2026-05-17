@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.1)  22 APR 2026 18:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.1)  17 MAY 2026 11:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2128,54 +2128,42 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/User/
 AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tempora/t2a-tempora.enc}]
-Underfull \hbox (badness 10000) in alignment at lines 91--91
-[][] 
- []
-
-
-Overfull \hbox (35.56593pt too wide) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in alignment at lines 93--93
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 94.
+(Font)              scaled to size 17.28pt on input line 98.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 117.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 120.
 ignored error: Infinite glue shrinkage found in box being split [2]
-Underfull \hbox (badness 10000) in alignment at lines 162--162
+Underfull \hbox (badness 10000) in alignment at lines 165--165
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 167--167
+Underfull \hbox (badness 10000) in alignment at lines 171--171
 [][] 
  []
 
 
-Overfull \hbox (35.56593pt too wide) in paragraph at lines 167--169
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 167--173
 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 178--178
+Underfull \hbox (badness 10000) in alignment at lines 183--183
 [][][] 
  []
 
 
-Overfull \hbox (35.56593pt too wide) in paragraph at lines 178--180
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--180
+Underfull \hbox (badness 10000) in paragraph at lines 178--185
 
  []
 
-[3] [4]
-(пояснительная_записка_Кленечева_241-327.toc)
+[3] (пояснительная_записка_Кленечева_241-327.toc)
 \tf@toc=\write4
 \openout4 = `пояснительная_записка_Кленечева_241-3
 27.toc'.
@@ -2183,7 +2171,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
 [5] [6]
 LaTeX Font Info:    Trying to load font information for TS1+Tempora-TLF on inpu
-t line 238.
+t line 243.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tempora\ts1tempora-tlf.f
 d
@@ -2191,23 +2179,76 @@ File: TS1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for TS1/Tempora-
 TLF.
 )
 LaTeX Font Info:    Font shape `TS1/Tempora-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 238.
+(Font)              scaled to size 14.4pt on input line 243.
  [7{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tempora/tmp_ac5
-xuc.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 274--274
-[]|\T2A/Tempora-TLF/b/n/14.4 (+20) ��������
+xuc.enc}] [8]
+Overfull \hbox (18.51103pt too wide) in paragraph at lines 355--368
+ [][] 
  []
 
+[9] [10] [11]
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/it' will be
+(Font)              scaled to size 14.4pt on input line 485.
+ [12] [13]
+<img/use_case.png, id=198, 1390.44469pt x 495.35063pt>
+File: img/use_case.png Graphic file (type png)
+<use img/use_case.png>
+Package pdftex.def Info: img/use_case.png  used on input line 554.
+(pdftex.def)             Requested size: 445.99553pt x 158.8858pt.
+ [14 <./img/use_case.png>] [15]
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
+605.
 
-Underfull \hbox (badness 7486) in paragraph at lines 276--276
-[]|\T2A/Tempora-TLF/m/n/14.4 (+20) ���������� ���-����-
- []
+(C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T2A).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 
-[8] [9] [10] [11] [12] [13]
-
-Package caption Warning: Unused \captionsetup[figure] on input line 114.
-See the caption package documentation for explanation.
-
+[16]
+<img/er.png, id=219, 1215.54124pt x 793.96625pt>
+File: img/er.png Graphic file (type png)
+<use img/er.png>
+Package pdftex.def Info: img/er.png  used on input line 629.
+(pdftex.def)             Requested size: 422.52057pt x 275.97818pt.
+<img/1wf.png, id=221, 592.614pt x 462.528pt>
+File: img/1wf.png Graphic file (type png)
+<use img/1wf.png>
+Package pdftex.def Info: img/1wf.png  used on input line 644.
+(pdftex.def)             Requested size: 305.15294pt x 238.1728pt.
+ [17 <./img/er.png>]
+<img/2wf.png, id=230, 593.21625pt x 461.92575pt>
+File: img/2wf.png Graphic file (type png)
+<use img/2wf.png>
+Package pdftex.def Info: img/2wf.png  used on input line 655.
+(pdftex.def)             Requested size: 305.15294pt x 237.62305pt.
+ [18 <./img/1wf.png> <./img/2wf.png>]
+<img/3wf.png, id=239, 594.42075pt x 578.16pt>
+File: img/3wf.png Graphic file (type png)
+<use img/3wf.png>
+Package pdftex.def Info: img/3wf.png  used on input line 666.
+(pdftex.def)             Requested size: 305.15294pt x 296.80736pt.
+<img/4wf.png, id=241, 1030.85126pt x 963.6pt>
+File: img/4wf.png Graphic file (type png)
+<use img/4wf.png>
+Package pdftex.def Info: img/4wf.png  used on input line 676.
+(pdftex.def)             Requested size: 305.15294pt x 285.24466pt.
+ [19 <./img/3wf.png>]
+<img/5wf.png, id=250, 1030.85126pt x 963.6pt>
+File: img/5wf.png Graphic file (type png)
+<use img/5wf.png>
+Package pdftex.def Info: img/5wf.png  used on input line 688.
+(pdftex.def)             Requested size: 305.15294pt x 285.24466pt.
+ [20 <./img/4wf.png>]
+<img/6wf.png, id=259, 1030.85126pt x 963.6pt>
+File: img/6wf.png Graphic file (type png)
+<use img/6wf.png>
+Package pdftex.def Info: img/6wf.png  used on input line 700.
+(pdftex.def)             Requested size: 305.15294pt x 285.24466pt.
+ [21 <./img/5wf.png>] [22 <./img/6wf.png>] [23]
+[24] [25]
 
 Package caption Warning: Unused \captionsetup[longtable] on input line 135.
 See the caption package documentation for explanation.
@@ -2216,30 +2257,33 @@ See the caption package documentation for explanation.
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 237.
 See the caption package documentation for explanation.
 
-[14] (пояснительная_записка_Кленечева_241-327.aux)
+[26] (пояснительная_записка_Кленечева_241-327.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
  ***********
 Package rerunfilecheck Info: File `пояснительная_записка_К
 ленечева_241-327.out' has not changed.
-(rerunfilecheck)             Checksum: 7360734BDBFC6C02CF32CC67AF686A93;5940.
+(rerunfilecheck)             Checksum: 5D2B82F5A00506F64CD32633C3DC59F6;6028.
  ) 
 Here is how much of TeX's memory you used:
- 24447 strings out of 467871
- 401315 string characters out of 5418861
- 836970 words of memory out of 5000000
- 52790 multiletter control sequences out of 15000+600000
- 671379 words of font info for 126 fonts, out of 8000000 for 9000
+ 24627 strings out of 467871
+ 405100 string characters out of 5418861
+ 837152 words of memory out of 5000000
+ 52895 multiletter control sequences out of 15000+600000
+ 682035 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,10n,131p,1067b,2329s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Tempo
-ra-Bold.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/tem
-pora/Tempora-Regular.pfb>
+ 90i,10n,131p,1067b,2330s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\User\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt144
+0.pk><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/tempora/Te
+mpora-Bold.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+tempora/Tempora-Italic.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/tempora/Tempora-Regular.pfb><C:/Users/User/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Output written on пояснительная_записка_Кленечева_
-241-327.pdf (14 pages, 116409 bytes).
+241-327.pdf (25 pages, 522699 bytes).
 PDF statistics:
- 227 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 28369 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 348 PDF objects out of 1000 (max. 8388607)
+ 67 named destinations out of 1000 (max. 500000)
+ 33529 words of extra memory for PDF output out of 35830 (max. 10000000)
 

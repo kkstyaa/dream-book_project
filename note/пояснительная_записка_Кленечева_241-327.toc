@@ -2,26 +2,26 @@
 \contentsline {section}{\MakeUppercase []{ВВЕДЕНИЕ}}{6}{table.0.1}%
 \contentsline {section}{\MakeUppercase []{\numberline {1}Анализ предметной области}}{8}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Обзор существующих решений}{8}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Анализ инструментов разработки}{8}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Формулировка цели и задач}{9}{subsection.1.3}%
-\contentsline {section}{\MakeUppercase []{\numberline {2}Проектирование веб-приложения}}{10}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Анализ целевой аудитории}{10}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Описание функциональности}{10}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Проектирование модели данных}{10}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Разработка макетов страниц}{10}{subsection.2.4}%
-\contentsline {section}{\MakeUppercase []{\numberline {3}Разработка веб-приложения}}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Модели базы данных}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Аутентификация и личные кабинеты}{11}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}CRUD-интерфейс для управления снами}{11}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Загрузка файлов}{11}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Анализ текста сна}{11}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Агрегация данных и статистика}{11}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}REST API}{11}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Экспорт в PDF}{11}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Панель администратора}{11}{subsection.3.9}%
-\contentsline {section}{\MakeUppercase []{\numberline {4}Оформление итогов работы}}{12}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Git-репозиторий}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Деплой на хостинг}{12}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Оформление отчёта}{12}{subsection.4.3}%
-\contentsline {section}{\MakeUppercase []{ЗАКЛЮЧЕНИЕ}}{13}{subsection.4.3}%
-\contentsline {section}{\MakeUppercase []{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}{14}{subsection.4.3}%
+\contentsline {subsection}{\numberline {1.2}Анализ инструментов разработки}{9}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Формулировка цели и задач}{11}{subsection.1.3}%
+\contentsline {section}{\MakeUppercase []{\numberline {2}Проектирование веб-приложения}}{12}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Анализ целевой аудитории}{12}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Описание функциональности приложения}{13}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Проектирование модели данных}{15}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Разработка макетов страниц}{17}{subsection.2.4}%
+\contentsline {section}{\MakeUppercase []{\numberline {3}Разработка веб-приложения}}{23}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Модели базы данных}{23}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Аутентификация и личные кабинеты}{23}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}CRUD-интерфейс для управления снами}{23}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Загрузка файлов}{23}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Анализ текста сна}{23}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Агрегация данных и статистика}{23}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}REST API}{23}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Экспорт в PDF}{23}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}Панель администратора}{23}{subsection.3.9}%
+\contentsline {section}{\MakeUppercase []{\numberline {4}Оформление итогов работы}}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Git-репозиторий}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Деплой на хостинг}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Оформление отчёта}{24}{subsection.4.3}%
+\contentsline {section}{\MakeUppercase []{ЗАКЛЮЧЕНИЕ}}{25}{subsection.4.3}%
+\contentsline {section}{\MakeUppercase []{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}{26}{subsection.4.3}%
