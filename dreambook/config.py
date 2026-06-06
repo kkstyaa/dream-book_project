@@ -6,7 +6,7 @@ load_dotenv()
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'dev-secret-key-12345')
     # Временный SQLite
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///dream_book.db'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dream_book.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Настройки загрузки файлов
