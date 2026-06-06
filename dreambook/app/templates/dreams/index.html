@@ -6,6 +6,31 @@
         <a href="{{ url_for('dreams.new') }}" class="btn-new-dream">Новый сон</a>
     </div>
 
+    <!-- Форма фильтрации -->
+    <div class="filter-form">
+        <form method="GET" class="row g-3">
+            <div class="col-md-4">
+                <input type="text" name="title" class="filter-input" placeholder="Поиск по названию" value="{{ title_filter or '' }}">
+            </div>
+            <div class="col-md-3">
+                <input type="month" name="year_month" class="filter-input" value="{{ year_month or '' }}">
+            </div>
+            <div class="col-md-3">
+                <select name="mood" class="filter-input">
+                    <option value="">Все оценки</option>
+                    {% for i in range(1, 6) %}
+                        <option value="{{ i }}" {% if mood_filter == i %}selected{% endif %}>{{ i }} звезд</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn-filter">Найти</button>
+                <a href="{{ url_for('dreams.index') }}" class="btn-reset">Сброс</a>
+            </div>
+        </form>
+    </div>
+
+
     {% if dreams %}
         <div class="dream-grid">
             {% for dream in dreams %}
@@ -70,13 +95,20 @@
             {% endif %}
         </div>
         {% endif %}
-    {% else %}
+    
+        {% elif title_filter or year_month or mood_filter %}
         <div class="empty-state">
-            <div class="empty-icon"></div>
+            <div class="empty-icon">🔍</div>
+            <div class="empty-text">По вашему запросу ничего не найдено</div>
+            <div class="empty-text" style="font-size: 0.9rem; margin-top: 10px;">Попробуйте изменить параметры поиска</div>
+        </div>
+        {% else %}
+        <div class="empty-state">
+            <div class="empty-icon">📖</div>
             <div class="empty-text">У вас пока нет записей снов</div>
             <div class="empty-text" style="font-size: 0.9rem; margin-top: 10px;">Создайте свой первый сон, чтобы начать</div>
         </div>
-    {% endif %}
+        {% endif %}
 </div>
 
 <link rel="stylesheet" href="{{ url_for('static', filename='dream_index.css') }}">

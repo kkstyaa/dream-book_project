@@ -34,7 +34,15 @@
             </div>
             <div class="info-row">
                 <span class="info-label">Символы:</span>
-                <span class="info-value">— (скоро здесь появятся символы)</span>
+                <span class="info-value">
+                {% if dream.dream_symbols %}
+                    {% for ds in dream.dream_symbols %}
+                        <span class="symbol-badge">{{ ds.symbol.name }}</span>
+                    {% endfor %}
+                {% else %}
+                    —
+                {% endif %}
+                </span>
             </div>
         </div>
     </div>

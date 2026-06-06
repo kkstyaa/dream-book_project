@@ -198,3 +198,41 @@
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.filter-form {
+    background: rgba(45, 27, 78, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-input {
+    width: 100%;
+    padding: 10px 15px;
+    background: rgba(26, 11, 46, 0.6);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    border-radius: 12px;
+    color: #e5c5ff;
+}
+
+.btn-filter, .btn-reset {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 48%;
+}
+
+.btn-filter {
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+    border: none;
+}
+
+.btn-reset {
+    background: transparent;
+    border: 1px solid #9b59b6;
+    color: #d4b0ff;
+}

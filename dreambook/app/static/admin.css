@@ -1,0 +1,207 @@
+/* Стили для страниц административной панели */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.admin-tab {
+    padding: 10px 24px;
+    color: #c9a3ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.admin-tab:hover {
+    color: #e5c5ff;
+    background: rgba(155, 89, 182, 0.1);
+}
+
+.admin-tab.active {
+    color: #9b59b6;
+    border-bottom-color: #9b59b6;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.admin-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #e5c5ff, #9b59b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(45, 27, 78, 0.5);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.admin-table th {
+    background: rgba(26, 11, 46, 0.6);
+    color: #e5c5ff;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.admin-table td {
+    color: #d4b0ff;
+}
+
+.admin-table tr:hover td {
+    background: rgba(155, 89, 182, 0.1);
+}
+
+.btn-admin {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-admin-primary {
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+}
+
+.btn-admin-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(155, 89, 182, 0.4);
+    color: white;
+}
+
+.btn-admin-warning {
+    background: rgba(243, 156, 18, 0.2);
+    border: 1px solid #f39c12;
+    color: #f39c12;
+}
+
+.btn-admin-warning:hover {
+    background: rgba(243, 156, 18, 0.4);
+    color: #f1c40f;
+}
+
+.btn-admin-danger {
+    background: rgba(231, 76, 60, 0.2);
+    border: 1px solid #e74c3c;
+    color: #e74c3c;
+}
+
+.btn-admin-danger:hover {
+    background: rgba(231, 76, 60, 0.4);
+    color: #e74c3c;
+}
+
+.btn-admin-secondary {
+    background: transparent;
+    border: 1px solid #9b59b6;
+    color: #d4b0ff;
+}
+
+.btn-admin-secondary:hover {
+    background: rgba(155, 89, 182, 0.2);
+    color: white;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge-primary {
+    background: rgba(155, 89, 182, 0.3);
+    color: #9b59b6;
+}
+
+.badge-secondary {
+    background: rgba(201, 163, 255, 0.2);
+    color: #c9a3ff;
+}
+
+.admin-form-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(45, 27, 78, 0.5);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.admin-form-label {
+    display: block;
+    color: #d4b0ff;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.admin-form-input {
+    width: 100%;
+    padding: 10px 14px;
+    background: rgba(26, 11, 46, 0.6);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    border-radius: 10px;
+    color: #e5c5ff;
+    transition: all 0.3s ease;
+}
+
+.admin-form-input:focus {
+    outline: none;
+    border-color: #9b59b6;
+    box-shadow: 0 0 8px rgba(155, 89, 182, 0.3);
+}
+
+.admin-form-text {
+    font-size: 0.75rem;
+    color: #c9a3ff;
+    margin-top: 5px;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #c9a3ff;
+    background: rgba(45, 27, 78, 0.3);
+    border-radius: 16px;
+}

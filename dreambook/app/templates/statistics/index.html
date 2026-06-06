@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="stats-container">
+    <h1 class="stats-title">Статистика снов</h1>
+
+    <!-- Основные показатели -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">{{ total_dreams }}</div>
+            <div class="stat-label">Всего снов</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ avg_mood|round(1) if avg_mood else '—' }}</div>
+            <div class="stat-label">Средняя оценка</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ total_months }}</div>
+            <div class="stat-label">Месяцев ведения</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">{{ best_month.month if best_month else '—' }}</div>
+            <div class="stat-label">Лучший месяц</div>
+        </div>
+    </div>
+
+    <!-- График частоты снов -->
+    <div class="chart-container">
+        <div class="chart-title">Количество снов по месяцам</div>
+        <canvas id="dreamsChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- График настроения -->
+    <div class="chart-container">
+        <div class="chart-title">Динамика настроения</div>
+        <canvas id="moodChart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Топ символов -->
+    {% if top_symbols %}
+    <div class="top-symbols-container">
+        <div class="chart-title">Самые частые символы</div>
+        <ul class="symbols-list">
+            {% for symbol in top_symbols %}
+            <li>
+                <span class="symbol-name">{{ symbol.name }}</span>
+                <span class="symbol-count">{{ symbol.count }} раз(а)</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% else %}
+    <div class="top-symbols-container" style="text-align: center; color: #c9a3ff;">
+        <p>Добавьте больше снов, чтобы увидеть статистику символов</p>
+    </div>
+    {% endif %}
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='statistics.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+// Данные из Flask
+const monthly_counts = {{ monthly_counts|tojson }};
+const monthly_moods = {{ monthly_moods|tojson }};
+
+// График количества снов
+const ctx1 = document.getElementById('dreamsChart').getContext('2d');
+new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: monthly_counts.map(d => d.month),
+        datasets: [{
+            label: 'Количество снов',
+            data: monthly_counts.map(d => d.count),
+            backgroundColor: 'rgba(155, 89, 182, 0.6)',
+            borderColor: '#9b59b6',
+            borderWidth: 1,
+            borderRadius: 8
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { labels: { color: '#e5c5ff' } }
+        },
+        scales: {
+            y: { ticks: { color: '#c9a3ff' }, grid: { color: 'rgba(155, 89, 182, 0.2)' } },
+            x: { ticks: { color: '#c9a3ff' }, grid: { color: 'rgba(155, 89, 182, 0.2)' } }
+        }
+    }
+});
+
+// График настроения
+const ctx2 = document.getElementById('moodChart').getContext('2d');
+new Chart(ctx2, {
+    type: 'line',
+    data: {
+        labels: monthly_moods.map(d => d.month),
+        datasets: [{
+            label: 'Средняя оценка (1-5)',
+            data: monthly_moods.map(d => d.avg_mood),
+            backgroundColor: 'rgba(155, 89, 182, 0.1)',
+            borderColor: '#9b59b6',
+            borderWidth: 2,
+            fill: true,
+            tension: 0.3,
+            pointBackgroundColor: '#e5c5ff'
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { labels: { color: '#e5c5ff' } }
+        },
+        scales: {
+            y: { min: 1, max: 5, ticks: { color: '#c9a3ff' }, grid: { color: 'rgba(155, 89, 182, 0.2)' } },
+            x: { ticks: { color: '#c9a3ff' }, grid: { color: 'rgba(155, 89, 182, 0.2)' } }
+        }
+    }
+});
+</script>
+
+<!-- Облако тегов -->
+{% if all_symbols %}
+<div class="chart-container">
+    <div class="chart-title">Облако тегов</div>
+    <div class="tag-cloud">
+        {% for symbol in all_symbols %}
+        <span class="tag" style="font-size: {{ 0.8 + symbol.count * 0.15 }}rem;">
+            {{ symbol.name }}
+        </span>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<div class="export-section">
+    <h4 style="color: #e5c5ff; margin-bottom: 15px;">Экспорт</h4>
+    <div style="display: flex; gap: 15px; justify-content: center;">
+        <a href="{{ url_for('statistics.export_stats') }}" class="btn-export">Экспорт статистики (CSV)</a>
+        <a href="{{ url_for('statistics.export_dreams') }}" class="btn-export">Экспорт всей книги (CSV)</a>
+    </div>
+</div>
+
+{% endblock %}

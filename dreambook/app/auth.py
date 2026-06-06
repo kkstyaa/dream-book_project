@@ -2,9 +2,20 @@ from flask import Blueprint, render_template, redirect, url_for, flash, request,
 from flask_login import login_user, logout_user, login_required, current_user
 from app.models import db, User
 from app.utils import save_file
+from functools import wraps
 
 bp = Blueprint('auth', __name__, url_prefix='/auth')
 
+def admin_required(func):
+    """Декоратор для проверки прав администратора"""
+    from functools import wraps
+    @wraps(func)
+    def decorated_view(*args, **kwargs):
+        if not current_user.is_authenticated or current_user.role != 'admin':
+            flash('У вас нет доступа к этой странице', 'danger')
+            return redirect(url_for('index'))
+        return func(*args, **kwargs)
+    return decorated_view
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():

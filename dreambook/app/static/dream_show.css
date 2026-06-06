@@ -193,3 +193,12 @@
     color: #e5c5ff;
     text-decoration: underline;
 }
+
+.symbol-badge {
+    display: inline-block;
+    background: rgba(155, 89, 182, 0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 2px 4px;
+}

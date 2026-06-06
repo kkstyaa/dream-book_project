@@ -22,6 +22,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('profile') }}">Профиль</a>
                         </li>
+                        {% if current_user.is_authenticated and current_user.role == 'admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('admin.users') }}">Админка</a>
+                        </li>
+                        {% endif %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('dreams.index') }}">Моя книга</a>
                         </li>
@@ -29,7 +34,7 @@
                             <a class="nav-link" href="{{ url_for('dreams.new') }}">Новый сон</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Статистика</a>
+                            <a class="nav-link" href="{{ url_for('statistics.index') }}">Статистика</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('auth.logout') }}">Выйти</a>

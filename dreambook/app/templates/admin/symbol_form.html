@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="admin-container">
+    <div class="admin-tabs">
+        <a href="{{ url_for('admin.users') }}" class="admin-tab">Пользователи</a>
+        <a href="{{ url_for('admin.symbols') }}" class="admin-tab">Символы</a>
+    </div>
+
+    <div class="admin-form-card">
+        <h1 class="admin-title" style="margin-bottom: 25px;">{{ 'Редактирование символа' if symbol else 'Новый символ' }}</h1>
+        
+        <form method="POST">
+            <div class="mb-3">
+                <label class="admin-form-label">Название символа</label>
+                <input type="text" name="name" class="admin-form-input" value="{{ symbol.name if symbol else '' }}" required>
+                <div class="admin-form-text">Примеры: вода, огонь, полёт, страх, радость</div>
+            </div>
+            
+            <div class="admin-actions">
+                <button type="submit" class="btn-admin btn-admin-primary">Сохранить</button>
+                <a href="{{ url_for('admin.symbols') }}" class="btn-admin btn-admin-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+{% endblock %}

@@ -5,6 +5,7 @@ from config import Config
 from app.models import db
 from flask import send_from_directory
 
+
 login_manager = LoginManager()
 login_manager.login_view = 'auth.login'
 login_manager.login_message = 'Для доступа к этой странице необходимо войти в систему'
@@ -21,9 +22,13 @@ def create_app():
     # Blueprints
     from app.auth import bp as auth_bp
     from app.dreams import bp as dreams_bp
+    from app.statistics import bp as stats_bp
+    from app.admin import bp as admin_bp
 
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(dreams_bp, url_prefix='/dreams')
+    app.register_blueprint(stats_bp, url_prefix='/statistics')
+    app.register_blueprint(admin_bp, url_prefix='/admin')
 
     @app.route('/')
     def index():

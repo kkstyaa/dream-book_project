@@ -2,8 +2,10 @@ from flask import Blueprint, render_template, redirect, url_for, flash, request,
 from flask_login import login_required, current_user
 from datetime import datetime
 from app import db
-from app.models import Dream, UserImage, GeneratedImage
+from app.models import Dream, UserImage, GeneratedImage, Symbol, DreamSymbol
 from app.utils import save_file, generate_ai_image
+from app.symbol_analyzer import analyze_and_save_symbols
+from app.stats_aggregator import update_all_stats
 
 bp = Blueprint('dreams', __name__, url_prefix='/dreams')
 
@@ -11,19 +13,35 @@ bp = Blueprint('dreams', __name__, url_prefix='/dreams')
 @bp.route('/')
 @login_required
 def index():
-    """Список снов текущего пользователя с пагинацией"""
     page = request.args.get('page', 1, type=int)
     per_page = 9
     
-    pagination = Dream.query.filter_by(user_id=current_user.user_id)\
-        .order_by(Dream.dream_date.desc())\
-        .paginate(page=page, per_page=per_page, error_out=False)
+    query = Dream.query.filter_by(user_id=current_user.user_id)
     
+    # Фильтр по названию
+    title_filter = request.args.get('title', '')
+    if title_filter:
+        query = query.filter(Dream.title.ilike(f'%{title_filter}%'))
+    
+    # Фильтр по дате (год-месяц)
+    year_month = request.args.get('year_month', '')
+    if year_month and len(year_month) == 7:
+        query = query.filter(Dream.dream_date.like(f'{year_month}%'))
+    
+    # Фильтр по настроению
+    mood_filter = request.args.get('mood', type=int)
+    if mood_filter:
+        query = query.filter(Dream.mood == mood_filter)
+    
+    pagination = query.order_by(Dream.dream_date.desc()).paginate(page=page, per_page=per_page, error_out=False)
     dreams = pagination.items
     
     return render_template('dreams/index.html', 
                          dreams=dreams, 
-                         pagination=pagination)
+                         pagination=pagination,
+                         title_filter=title_filter,
+                         year_month=year_month,
+                         mood_filter=mood_filter)
 
 
 @bp.route('/<int:dream_id>')
@@ -89,6 +107,8 @@ def new():
                 db.session.add(gen_image)
         
         db.session.commit()
+        analyze_and_save_symbols(dream.dream_id, dream.content)
+        update_all_stats(current_user.user_id)
         flash('Сон успешно добавлен!', 'success')
         return redirect(url_for('dreams.index'))
 
@@ -142,6 +162,8 @@ def edit(dream_id):
                 db.session.add(gen_image)
         
         db.session.commit()
+        analyze_and_save_symbols(dream.dream_id, dream.content)
+        update_all_stats(current_user.user_id)
         flash('Сон успешно обновлён!', 'success')
         return redirect(url_for('dreams.show', dream_id=dream.dream_id))
 
@@ -159,6 +181,7 @@ def delete(dream_id):
 
     db.session.delete(dream)
     db.session.commit()
+    update_all_stats(current_user.user_id)
     flash('Сон удалён', 'success')
     return redirect(url_for('dreams.index'))
 
@@ -171,14 +194,25 @@ def stats():
     
     dream_count = Dream.query.filter_by(user_id=current_user.user_id).count()
     avg_mood = db.session.query(func.avg(Dream.mood)).filter_by(user_id=current_user.user_id).scalar()
-    top_symbol = None
+    
+    # Самый частый символ
+    top_symbol = db.session.query(
+        Symbol.name,
+        func.count(DreamSymbol.symbol_id).label('count')
+    ).join(DreamSymbol, DreamSymbol.symbol_id == Symbol.symbol_id)\
+     .join(Dream, Dream.dream_id == DreamSymbol.dream_id)\
+     .filter(Dream.user_id == current_user.user_id)\
+     .group_by(Symbol.symbol_id)\
+     .order_by(func.count(DreamSymbol.symbol_id).desc())\
+     .first()
+    
+    top_symbol_name = top_symbol.name if top_symbol else None
     
     return {
         'dream_count': dream_count,
         'avg_mood': float(avg_mood) if avg_mood else None,
-        'top_symbol': top_symbol
+        'top_symbol': top_symbol_name
     }
-
 
 @bp.route('/generate_image', methods=['POST'])
 @login_required
@@ -228,4 +262,23 @@ def regenerate_image(dream_id):
     
     db.session.commit()
     return {'success': True}
+
+@bp.route('/calendar_data')
+@login_required
+def calendar_data():
+    user_id = current_user.user_id
+    dreams = Dream.query.filter_by(user_id=user_id).all()
+    
+    calendar_events = []
+    for dream in dreams:
+        calendar_events.append({
+            'date': dream.dream_date.strftime('%Y-%m-%d'),
+            'title': dream.title,
+            'mood': dream.mood,
+            'dream_id': dream.dream_id
+        })
+    
+    return {'events': calendar_events}
+
+
 
