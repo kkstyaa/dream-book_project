@@ -1,18 +1,20 @@
 from app import create_app, db
-import os
-
-# Импортируем модели, чтобы SQLAlchemy "увидел" их
 from app.models import User, Dream, Symbol, DreamSymbol, Statistic, EmotionStat, SymbolStat, GenerationRequest, GeneratedImage, UserImage
+import os
 
 app = create_app()
 
 with app.app_context():
-    print("🔄 Создание таблиц базы данных...")
+    print("🔄 Проверка и создание таблиц базы данных...")
     db.create_all()
-    print("✅ Таблицы успешно созданы!")
+    print("✅ Таблицы готовы!")
     
-    # Создаем необходимые папки, если их нет
+    # Создаём папки
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
     os.makedirs(app.config['AVATAR_FOLDER'], exist_ok=True)
     os.makedirs(app.config['DREAM_IMAGES_FOLDER'], exist_ok=True)
-    print("✅ Папки для загрузки файлов созданы!")
+    print("✅ Папки для загрузки готовы!")
+    
+    # Проверим, есть ли хоть один пользователь
+    if User.query.count() == 0:
+        print("⚠️ В базе нет пользователей. Создайте первого через регистрацию.")
