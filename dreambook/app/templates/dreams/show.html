@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dream-show-container">
+    <h1 class="dream-title">{{ dream.title }}</h1>
+
+    <div class="dream-content-layout">
+        <!-- Блок с картинкой (слева) -->
+        <div class="dream-image-section">
+            <div class="dream-image">
+                {% if dream.user_image %}
+                    <img src="{{ dream.user_image.image_url }}" alt="Иллюстрация к сну">
+                {% elif dream.generated_image %}
+                    <img src="{{ dream.generated_image.image_url }}" alt="Сгенерированная картинка">
+                {% else %}
+                    <div class="no-image">
+                        <div class="no-image-icon">🌙</div>
+                        <div class="no-image-text">Нет иллюстрации</div>
+                        <div class="no-image-text" style="font-size: 0.75rem;">Вы можете добавить или сгенерировать картинку при редактировании</div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Блок с информацией-->
+        <div class="dream-info-section">
+            <div class="info-row">
+                <span class="info-label">Дата сна:</span>
+                <span class="info-value">{{ dream.dream_date.strftime('%d.%m.%Y') }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Настроение:</span>
+                <span class="info-value">{{ dream.mood or 'не указано' }}/5</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Символы:</span>
+                <span class="info-value">— (скоро здесь появятся символы)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок с текстом сна -->
+    <div class="dream-text-section">
+        <div class="dream-text-title">Текст сна</div>
+        <div class="dream-text-content">{{ dream.content|safe }}</div>
+    </div>
+
+    <!-- Кнопки действий -->
+    <div class="dream-actions">
+        <a href="{{ url_for('dreams.edit', dream_id=dream.dream_id) }}" class="btn-dream btn-dream-primary">Редактировать</a>
+        <a href="{{ url_for('dreams.delete', dream_id=dream.dream_id) }}" class="btn-dream btn-dream-primary" onclick="return confirm('Точно удалить этот сон?')">Удалить</a>
+        <button class="btn-dream btn-dream-primary" id="regenerateBtn">Перегенерировать картинку</button>
+    </div>
+
+    <!-- Ссылка назад -->
+    <div class="back-link">
+        <a href="{{ url_for('dreams.index') }}">← Назад к книге снов</a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dream_show.css') }}">
+
+<script>
+document.getElementById('regenerateBtn')?.addEventListener('click', async function() {
+    const btn = this;
+    const originalText = btn.innerText;
+    btn.innerText = 'Генерация...';
+    btn.disabled = true;
+    
+    fetch('/dreams/regenerate_image/{{ dream.dream_id }}', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            location.reload();
+        } else {
+            alert('Ошибка: ' + (data.error || 'Не удалось сгенерировать картинку'));
+            btn.innerText = originalText;
+            btn.disabled = false;
+        }
+    })
+    .catch(error => {
+        alert('Ошибка: ' + error);
+        btn.innerText = originalText;
+        btn.disabled = false;
+    });
+});
+</script>
+{% endblock %}

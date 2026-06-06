@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dream-index-container">
+    <div class="dream-index-header">
+        <a href="{{ url_for('dreams.new') }}" class="btn-new-dream">Новый сон</a>
+    </div>
+
+    {% if dreams %}
+        <div class="dream-grid">
+            {% for dream in dreams %}
+            <div class="dream-card">
+                <div class="dream-card-title">{{ dream.title }}</div>
+                
+                <div class="dream-card-image">
+                    {% if dream.user_image %}
+                        <img src="{{ dream.user_image.image_url }}" alt="{{ dream.title }}">
+                    {% elif dream.generated_image %}
+                        <img src="{{ dream.generated_image.image_url }}" alt="{{ dream.title }}">
+                    {% else %}
+                        <div class="dream-card-image-placeholder">🌙</div>
+                    {% endif %}
+                </div>
+                
+                <div class="dream-card-date">{{ dream.dream_date.strftime('%d.%m.%Y') }}</div>
+                
+                <div class="dream-card-rating">
+                    {% for i in range(1, 6) %}
+                        {% if dream.mood and i <= dream.mood %}
+                            <span class="star filled">★</span>
+                        {% else %}
+                            <span class="star">☆</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <div class="dream-card-actions">
+                    <a href="{{ url_for('dreams.show', dream_id=dream.dream_id) }}" class="btn-card btn-card-view">Открыть</a>
+                    <a href="{{ url_for('dreams.edit', dream_id=dream.dream_id) }}" class="btn-card btn-card-edit">Изменить</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Пагинация -->
+        {% if pagination and pagination.pages > 1 %}
+        <div class="pagination">
+            {% if pagination.has_prev %}
+                <a href="{{ url_for('dreams.index', page=pagination.prev_num) }}">←</a>
+            {% else %}
+                <span class="disabled">←</span>
+            {% endif %}
+            
+            {% for page in pagination.iter_pages() %}
+                {% if page %}
+                    {% if page == pagination.page %}
+                        <span class="active">{{ page }}</span>
+                    {% else %}
+                        <a href="{{ url_for('dreams.index', page=page) }}">{{ page }}</a>
+                    {% endif %}
+                {% else %}
+                    <span>...</span>
+                {% endif %}
+            {% endfor %}
+            
+            {% if pagination.has_next %}
+                <a href="{{ url_for('dreams.index', page=pagination.next_num) }}">→</a>
+            {% else %}
+                <span class="disabled">→</span>
+            {% endif %}
+        </div>
+        {% endif %}
+    {% else %}
+        <div class="empty-state">
+            <div class="empty-icon"></div>
+            <div class="empty-text">У вас пока нет записей снов</div>
+            <div class="empty-text" style="font-size: 0.9rem; margin-top: 10px;">Создайте свой первый сон, чтобы начать</div>
+        </div>
+    {% endif %}
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dream_index.css') }}">
+{% endblock %}

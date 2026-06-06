@@ -1,0 +1,195 @@
+/* Стили для страницы просмотра одного сна */
+.dream-show-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.dream-title {
+    font-size: 2rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #e5c5ff, #9b59b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.3);
+    text-align: center;
+}
+
+.dream-content-layout {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.dream-image-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.dream-image {
+    background: rgba(26, 11, 46, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dream-image img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.no-image {
+    text-align: center;
+    color: #c9a3ff;
+}
+
+.no-image-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.no-image-text {
+    font-size: 0.9rem;
+    color: #c9a3ff;
+}
+
+.dream-info-section {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(45, 27, 78, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.info-row {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(155, 89, 182, 0.2);
+}
+
+.info-label {
+    display: inline-block;
+    width: 100px;
+    color: #c9a3ff;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #e5c5ff;
+}
+
+.dream-text-section {
+    background: rgba(45, 27, 78, 0.5);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+}
+
+.dream-text-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #e5c5ff;
+    margin-bottom: 15px;
+}
+
+.dream-text-content {
+    color: #d4b0ff;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.dream-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-dream {
+    padding: 10px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-dream-warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    border: none;
+}
+
+.btn-dream-warning:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+    color: white;
+}
+
+.btn-dream-danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+}
+
+.btn-dream-danger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+    color: white;
+}
+
+.btn-dream-secondary {
+    background: transparent;
+    border: 1.5px solid #9b59b6;
+    color: #d4b0ff;
+}
+
+.btn-dream-secondary:hover {
+    background: rgba(155, 89, 182, 0.2);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.btn-dream-primary {
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+    border: none;
+}
+
+.btn-dream-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+    color: white;
+}
+
+.back-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-link a {
+    color: #c9a3ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+    color: #e5c5ff;
+    text-decoration: underline;
+}

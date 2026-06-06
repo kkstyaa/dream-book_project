@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-container">
+    <!-- Основная карточка профиля -->
+    <div class="profile-card">
+        <div class="row align-items-center">
+            <!-- Аватар -->
+            <div class="col-md-3 profile-avatar-section">
+                <div class="avatar-circle">
+                    {% if current_user.avatar_url %}
+                        <img src="{{ current_user.avatar_url }}" class="avatar-img" alt="avatar" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                    {% else %}
+                        <span class="avatar-text">{{ current_user.username[0]|upper }}</span>
+                    {% endif %}
+                </div>
+                <form method="POST" action="{{ url_for('auth.upload_avatar') }}" enctype="multipart/form-data" class="mt-2">
+                    <input type="file" name="avatar" accept="image/*" id="avatarInput" style="display: none;" onchange="this.form.submit()">
+                    <label for="avatarInput" class="avatar-edit" style="cursor: pointer;">Сменить аватар</label>
+                </form>
+            </div>
+
+            <!-- Информация о пользователе-->
+            <div class="col-md-9 profile-info-section">
+                <h1 class="profile-username">{{ current_user.username }}</h1>
+                <span class="profile-role">{{ current_user.role|default('Пользователь') }}</span>
+
+                <div class="profile-detail">
+                    <span class="profile-detail-text">{{ current_user.email }}</span>
+                </div>
+                <div class="profile-detail">
+                    <span class="profile-detail-text">Зарегистрирован: {{ current_user.created_at.strftime('%d.%m.%Y') }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок статистики (заглушка) -->
+    <div class="profile-card">
+        <h4 class="stats-title">Краткая статистика</h4>
+        <div class="stats-container">
+            <div class="stats-card">
+                <div class="stats-number" id="dreamCount">—</div>
+                <div class="stats-label">Всего снов</div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-number" id="avgMood">—</div>
+                <div class="stats-label">Средняя оценка</div>
+            </div>
+            <div class="stats-card">
+                <div class="stats-number" id="topSymbol">—</div>
+                <div class="stats-label">Частый символ</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Календарь (заглушка) -->
+    <div class="calendar-card">
+        <h4 class="calendar-title">Календарь снов</h4>
+        <div class="calendar-placeholder">
+            Здесь будет отображаться календарь ваших снов
+        </div>
+    </div>
+
+    <!-- Кнопки действий -->
+    <div class="action-buttons">
+        <a href="{{ url_for('dreams.index') }}" class="btn-profile btn-profile-primary">Мои сны</a>
+        <a href="{{ url_for('dreams.new') }}" class="btn-profile btn-profile-primary">Новый сон</a>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}">
+
+<script>
+fetch('/dreams/stats')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('dreamCount').innerText = data.dream_count || 0;
+        document.getElementById('avgMood').innerText = data.avg_mood ? data.avg_mood.toFixed(1) : '—';
+        document.getElementById('topSymbol').innerText = data.top_symbol || '—';
+    });
+</script>
+{% endblock %}

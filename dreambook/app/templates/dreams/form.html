@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="dream-form-container">
+    <div class="dream-form-card">
+        <h2 class="dream-form-title">{{ 'Редактирование сна' if dream else 'Добавьте свой новый сон' }}</h2>
+        
+        <form method="POST" enctype="multipart/form-data" id="dreamForm">
+            <div class="mb-4">
+                <label class="dream-form-label">Заголовок сна</label>
+                <input type="text" name="title" class="dream-form-input" value="{{ dream.title if dream else '' }}" required>
+            </div>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <label class="dream-form-label">Дата сна</label>
+                    <input type="date" name="dream_date" class="dream-form-input" value="{{ dream.dream_date if dream else '' }}" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="dream-form-label">Оценка настроения (1–5)</label>
+                    <select name="mood" class="dream-form-select">
+                        <option value="">Выберите оценку</option>
+                        {% for i in range(1, 6) %}
+                            <option value="{{ i }}" {% if dream and dream.mood == i %}selected{% endif %}>{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label class="dream-form-label">Текст сна</label>
+                <textarea name="content" class="dream-form-textarea" rows="8" required>{{ dream.content if dream else '' }}</textarea>
+            </div>
+            
+            <!-- Скрытое поле для URL сгенерированной картинки -->
+            <input type="hidden" name="generated_image_url" id="generatedImageUrl" value="{{ temp_generated_image or (dream.generated_image.image_url if dream and dream.generated_image else '') }}">
+            
+            <div class="dream-images-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="image-upload-card">
+                            <h4>Добавить картинку</h4>
+                            <p class="image-description">Загрузите свою иллюстрацию к сну</p>
+                            <label class="image-upload-btn">
+                                Выбрать файл
+                                <input type="file" name="user_image" accept="image/*" id="dreamImageInput" style="display: none;">
+                            </label>
+                            <div id="imagePreview" class="image-preview" style="display: none; margin-top: 15px;">
+                                <img id="previewImg" src="#" alt="preview" style="max-width: 100%; max-height: 100px; border-radius: 10px;">
+                                <p style="font-size: 0.75rem; margin-top: 5px; color: #a5d6a7;">Файл выбран</p>
+                            </div>
+                            {% if dream and dream.user_image %}
+                                <div class="current-image">Текущая пользовательская картинка есть</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="image-ai-card">
+                            <h4>Сгенерировать через ИИ</h4>
+                            <p class="image-description">Автоматическая генерация картинки по тексту сна</p>
+                            <button type="button" class="ai-generate-btn" id="generateImageBtn">Сгенерировать</button>
+                            <div id="aiStatus" class="ai-status" style="display: none;"></div>
+                            <div id="generatedPreview" class="generated-preview" style="margin-top: 15px;">
+                                {% if temp_generated_image or (dream and dream.generated_image) %}
+                                    {% set img_url = temp_generated_image or dream.generated_image.image_url %}
+                                    <img src="{{ img_url }}" style="max-width: 100%; max-height: 150px; border-radius: 10px;">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dream-form-actions">
+                <button type="submit" class="btn-save">Сохранить</button>
+                <a href="{{ url_for('dreams.index') }}" class="btn-cancel">Отменить</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dreams.css') }}">
+
+<script>
+document.getElementById('generateImageBtn')?.addEventListener('click', async function() {
+    const content = document.querySelector('textarea[name="content"]').value;
+    
+    if (!content) {
+        alert('Сначала напишите текст сна');
+        return;
+    }
+    
+    const btn = this;
+    const statusDiv = document.getElementById('aiStatus');
+    const previewDiv = document.getElementById('generatedPreview');
+    const hiddenInput = document.getElementById('generatedImageUrl');
+    
+    btn.disabled = true;
+    statusDiv.style.display = 'block';
+    statusDiv.innerHTML = 'Генерация картинки...';
+    statusDiv.className = 'ai-status loading';
+    
+    try {
+        const response = await fetch('/dreams/generate_image', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ content: content })
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            statusDiv.innerHTML = 'Картинка сгенерирована!';
+            statusDiv.className = 'ai-status success';
+            
+            // Сохраняем URL в скрытое поле
+            hiddenInput.value = data.image_url;
+            
+            // Показываем превью
+            previewDiv.innerHTML = `<img src="${data.image_url}" style="max-width: 100%; max-height: 150px; border-radius: 10px;">`;
+        } else {
+            statusDiv.innerHTML = 'Ошибка: ' + (data.error || 'Не удалось сгенерировать');
+            statusDiv.className = 'ai-status error';
+        }
+    } catch (error) {
+        statusDiv.innerHTML = 'Ошибка: ' + error.message;
+        statusDiv.className = 'ai-status error';
+    } finally {
+        btn.disabled = false;
+    }
+});
+
+// Превью выбранного файла
+document.getElementById('dreamImageInput')?.addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+            document.getElementById('previewImg').src = evt.target.result;
+            document.getElementById('imagePreview').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+</script>
+{% endblock %}

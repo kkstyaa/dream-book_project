@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.1)  17 MAY 2026 11:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.4.1)  4 JUN 2026 12:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1902,14 +1902,14 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \JustifyingParindent=\skip84
 )
 LaTeX Font Info:    Trying to load font information for T1+Tempora-TLF on input
- line 29.
+ line 32.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tempora\t1tempora-tlf.fd
 File: T1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for T1/Tempora-TL
 F.
 )
 LaTeX Font Info:    Font shape `T1/Tempora-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 29.
+(Font)              scaled to size 14.4pt on input line 32.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
@@ -1932,58 +1932,58 @@ Package babel Info: 'russian' activates 'russian' shorthands.
 \openout1 = `пояснительная_записка_Кленечева_241-3
 27.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 29.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 2
-9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 3
+2.
  (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T2C/cmr/m/n on input line 29.
-LaTeX Font Info:    Trying to load font information for T2C+cmr on input line 2
-9.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T2C/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for T2C+cmr on input line 3
+2.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2ccmr.fd
 File: t2ccmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T2B/cmr/m/n on input line 29.
-LaTeX Font Info:    Trying to load font information for T2B+cmr on input line 2
-9.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T2B/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for T2B+cmr on input line 3
+2.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2bcmr.fd
 File: t2bcmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 29.
-LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 2
-9.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 32.
+LaTeX Font Info:    Trying to load font information for LGR+cmr on input line 3
+2.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cbfonts-fd\lgrcmr.fd
 File: lgrcmr.fd 2017/07/29 v1.2 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Info: Redefining \th on input line 29.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Info: Redefining \th on input line 32.
 \c@mv@tabular=\count348
 \c@mv@boldtabular=\count349
 
@@ -2012,13 +2012,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 g
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Info: Redefining \microtypecontext on input line 29.
-Package microtype Info: Applying patch `item' on input line 29.
-Package microtype Info: Applying patch `toc' on input line 29.
-Package microtype Info: Applying patch `eqnum' on input line 29.
-Package microtype Info: Applying patch `footnote' on input line 29.
-Package microtype Info: Applying patch `verbatim' on input line 29.
-LaTeX Info: Redefining \microtypesetup on input line 29.
+LaTeX Info: Redefining \microtypecontext on input line 32.
+Package microtype Info: Applying patch `item' on input line 32.
+Package microtype Info: Applying patch `toc' on input line 32.
+Package microtype Info: Applying patch `eqnum' on input line 32.
+Package microtype Info: Applying patch `footnote' on input line 32.
+Package microtype Info: Applying patch `verbatim' on input line 32.
+LaTeX Info: Redefining \microtypesetup on input line 32.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -2071,7 +2071,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 32.
 (пояснительная_записка_Кленечева_241-327.out)
 (пояснительная_записка_Кленечева_241-327.out)
 \@outlinefile=\write3
@@ -2088,25 +2088,25 @@ Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count356
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 34.
+(Font)              scaled to size 12.0pt on input line 37.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 37.
+(Font)              scaled to size 8.0pt on input line 40.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 39.
+(Font)              scaled to size 12.0pt on input line 42.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 20.74pt on input line 44.
+(Font)              scaled to size 20.74pt on input line 47.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 20.74pt on input line 44.
+(Font)              scaled to size 20.74pt on input line 47.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 45.
+(Font)              scaled to size 17.28pt on input line 48.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 49.
+(Font)              scaled to size 14.4pt on input line 52.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
 
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -2115,7 +2115,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
 
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -2128,38 +2128,38 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/User/
 AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tempora/t2a-tempora.enc}]
-Underfull \hbox (badness 10000) in alignment at lines 93--93
+Underfull \hbox (badness 10000) in alignment at lines 96--96
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 98.
+(Font)              scaled to size 17.28pt on input line 101.
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 117.
-LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 120.
+LaTeX Font Info:    Font shape `T2A/Tempora-TLF/b/n' will be
+(Font)              scaled to size 10.0pt on input line 123.
 ignored error: Infinite glue shrinkage found in box being split [2]
-Underfull \hbox (badness 10000) in alignment at lines 165--165
+Underfull \hbox (badness 10000) in alignment at lines 168--168
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 171--171
+Underfull \hbox (badness 10000) in alignment at lines 174--174
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--173
+Underfull \hbox (badness 10000) in paragraph at lines 170--176
 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 183--183
+Underfull \hbox (badness 10000) in alignment at lines 186--186
 [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--185
+Underfull \hbox (badness 10000) in paragraph at lines 181--188
 
  []
 
@@ -2171,7 +2171,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--185
 
 [5] [6]
 LaTeX Font Info:    Trying to load font information for TS1+Tempora-TLF on inpu
-t line 243.
+t line 246.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/tempora\ts1tempora-tlf.f
 d
@@ -2179,25 +2179,25 @@ File: TS1Tempora-TLF.fd 2016/02/02 (autoinst) Font definitions for TS1/Tempora-
 TLF.
 )
 LaTeX Font Info:    Font shape `TS1/Tempora-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 243.
+(Font)              scaled to size 14.4pt on input line 246.
  [7{C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/tempora/tmp_ac5
 xuc.enc}] [8]
-Overfull \hbox (18.51103pt too wide) in paragraph at lines 355--368
+Overfull \hbox (18.51103pt too wide) in paragraph at lines 358--371
  [][] 
  []
 
 [9] [10] [11]
 LaTeX Font Info:    Font shape `T2A/Tempora-TLF/m/it' will be
-(Font)              scaled to size 14.4pt on input line 485.
+(Font)              scaled to size 14.4pt on input line 488.
  [12] [13]
 <img/use_case.png, id=198, 1390.44469pt x 495.35063pt>
 File: img/use_case.png Graphic file (type png)
 <use img/use_case.png>
-Package pdftex.def Info: img/use_case.png  used on input line 554.
+Package pdftex.def Info: img/use_case.png  used on input line 557.
 (pdftex.def)             Requested size: 445.99553pt x 158.8858pt.
  [14 <./img/use_case.png>] [15]
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
-605.
+608.
 
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
@@ -2211,41 +2211,41 @@ Package microtype Info: Loading generic protrusion settings for font family
 <img/er.png, id=219, 1215.54124pt x 793.96625pt>
 File: img/er.png Graphic file (type png)
 <use img/er.png>
-Package pdftex.def Info: img/er.png  used on input line 629.
+Package pdftex.def Info: img/er.png  used on input line 633.
 (pdftex.def)             Requested size: 422.52057pt x 275.97818pt.
 <img/1wf.png, id=221, 592.614pt x 462.528pt>
 File: img/1wf.png Graphic file (type png)
 <use img/1wf.png>
-Package pdftex.def Info: img/1wf.png  used on input line 644.
+Package pdftex.def Info: img/1wf.png  used on input line 648.
 (pdftex.def)             Requested size: 305.15294pt x 238.1728pt.
  [17 <./img/er.png>]
 <img/2wf.png, id=230, 593.21625pt x 461.92575pt>
 File: img/2wf.png Graphic file (type png)
 <use img/2wf.png>
-Package pdftex.def Info: img/2wf.png  used on input line 655.
+Package pdftex.def Info: img/2wf.png  used on input line 660.
 (pdftex.def)             Requested size: 305.15294pt x 237.62305pt.
  [18 <./img/1wf.png> <./img/2wf.png>]
-<img/3wf.png, id=239, 594.42075pt x 578.16pt>
+<img/3wf.png, id=239, 1222.5675pt x 1214.5375pt>
 File: img/3wf.png Graphic file (type png)
 <use img/3wf.png>
-Package pdftex.def Info: img/3wf.png  used on input line 666.
-(pdftex.def)             Requested size: 305.15294pt x 296.80736pt.
+Package pdftex.def Info: img/3wf.png  used on input line 672.
+(pdftex.def)             Requested size: 305.15294pt x 303.13326pt.
 <img/4wf.png, id=241, 1030.85126pt x 963.6pt>
 File: img/4wf.png Graphic file (type png)
 <use img/4wf.png>
-Package pdftex.def Info: img/4wf.png  used on input line 676.
+Package pdftex.def Info: img/4wf.png  used on input line 683.
 (pdftex.def)             Requested size: 305.15294pt x 285.24466pt.
  [19 <./img/3wf.png>]
 <img/5wf.png, id=250, 1030.85126pt x 963.6pt>
 File: img/5wf.png Graphic file (type png)
 <use img/5wf.png>
-Package pdftex.def Info: img/5wf.png  used on input line 688.
+Package pdftex.def Info: img/5wf.png  used on input line 696.
 (pdftex.def)             Requested size: 305.15294pt x 285.24466pt.
  [20 <./img/4wf.png>]
 <img/6wf.png, id=259, 1030.85126pt x 963.6pt>
 File: img/6wf.png Graphic file (type png)
 <use img/6wf.png>
-Package pdftex.def Info: img/6wf.png  used on input line 700.
+Package pdftex.def Info: img/6wf.png  used on input line 709.
 (pdftex.def)             Requested size: 305.15294pt x 285.24466pt.
  [21 <./img/5wf.png>] [22 <./img/6wf.png>] [23]
 [24] [25]
@@ -2269,7 +2269,7 @@ Package rerunfilecheck Info: File `пояснительная_записка_К
 Here is how much of TeX's memory you used:
  24627 strings out of 467871
  405100 string characters out of 5418861
- 837152 words of memory out of 5000000
+ 837162 words of memory out of 5000000
  52895 multiletter control sequences out of 15000+600000
  682035 words of font info for 155 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2281,7 +2281,7 @@ tempora/Tempora-Italic.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/t
 ype1/public/tempora/Tempora-Regular.pfb><C:/Users/User/AppData/Local/Programs/M
 iKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
 Output written on пояснительная_записка_Кленечева_
-241-327.pdf (25 pages, 522699 bytes).
+241-327.pdf (25 pages, 602031 bytes).
 PDF statistics:
  348 PDF objects out of 1000 (max. 8388607)
  67 named destinations out of 1000 (max. 500000)

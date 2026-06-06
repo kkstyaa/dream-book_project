@@ -1,0 +1,212 @@
+/* Стили для страницы создания/редактирования сна */
+.dream-form-container {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.dream-form-card {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(45, 27, 78, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 28px;
+    padding: 40px;
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.dream-form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #e5c5ff, #9b59b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.dream-form-label {
+    display: block;
+    color: #d4b0ff;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.dream-form-input,
+.dream-form-select,
+.dream-form-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(26, 11, 46, 0.6);
+    border: 1px solid rgba(155, 89, 182, 0.4);
+    border-radius: 12px;
+    color: #e5c5ff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.dream-form-input:focus,
+.dream-form-select:focus,
+.dream-form-textarea:focus {
+    outline: none;
+    border-color: #9b59b6;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.3);
+    background: rgba(26, 11, 46, 0.8);
+}
+
+.dream-form-textarea {
+    resize: vertical;
+}
+
+.dream-images-section {
+    margin: 30px 0;
+}
+
+.image-upload-card,
+.image-ai-card {
+    background: rgba(26, 11, 46, 0.5);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.image-upload-card:hover,
+.image-ai-card:hover {
+    border-color: #9b59b6;
+    transform: translateY(-3px);
+}
+
+.image-icon,
+.ai-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.image-upload-card h4,
+.image-ai-card h4 {
+    color: #e5c5ff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.image-description {
+    color: #c9a3ff;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.image-upload-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.image-upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+}
+
+.ai-generate-btn {
+    background: transparent;
+    border: 1.5px solid #9b59b6;
+    color: #d4b0ff;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.ai-generate-btn:hover {
+    background: rgba(155, 89, 182, 0.2);
+    transform: translateY(-2px);
+    color: white;
+}
+
+.ai-status {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.ai-status.loading {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.ai-status.success {
+    color: #a5d6a7;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.current-image {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #a5d6a7;
+}
+
+.dream-form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-save {
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(155, 89, 182, 0.5);
+}
+
+.btn-cancel {
+    background: transparent;
+    border: 1.5px solid #9b59b6;
+    color: #d4b0ff;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: rgba(155, 89, 182, 0.15);
+    transform: translateY(-2px);
+    color: white;
+    text-decoration: none;
+}
+
+.ai-status.error {
+    color: #ef9a9a;
+    background: rgba(244, 67, 54, 0.15);
+}
+
+.generated-preview {
+    margin-top: 15px;
+}

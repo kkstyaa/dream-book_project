@@ -1,0 +1,200 @@
+/* Стили для страницы Моя книга снов */
+.dream-index-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.dream-index-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+}
+
+.btn-new-dream {
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(155, 89, 182, 0.3);
+}
+
+.btn-new-dream:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(155, 89, 182, 0.5);
+    color: white;
+}
+
+.dream-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.dream-card {
+    background: rgba(45, 27, 78, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.dream-card:hover {
+    transform: translateY(-5px);
+    border-color: #9b59b6;
+    box-shadow: 0 10px 30px rgba(155, 89, 182, 0.2);
+}
+
+.dream-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #e5c5ff;
+    margin-bottom: 15px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dream-card-image {
+    width: 100%;
+    height: 180px;
+    background: rgba(26, 11, 46, 0.5);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dream-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dream-card-image-placeholder {
+    text-align: center;
+    color: #c9a3ff;
+    font-size: 0.85rem;
+}
+
+.dream-card-date {
+    color: #c9a3ff;
+    font-size: 0.85rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.dream-card-rating {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.star {
+    font-size: 1.2rem;
+    color: #4a2c6d;
+}
+
+.star.filled {
+    color: #f1c40f;
+}
+
+.dream-card-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.btn-card {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-card-view {
+    background: linear-gradient(135deg, #9b59b6, #6c3483);
+    color: white;
+}
+
+.btn-card-view:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(155, 89, 182, 0.4);
+    color: white;
+}
+
+.btn-card-edit {
+    background: transparent;
+    border: 1px solid #9b59b6;
+    color: #d4b0ff;
+}
+
+.btn-card-edit:hover {
+    background: rgba(155, 89, 182, 0.2);
+    color: white;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(45, 27, 78, 0.5);
+    border-radius: 24px;
+    border: 1px dashed rgba(155, 89, 182, 0.4);
+}
+
+.empty-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.empty-text {
+    color: #c9a3ff;
+    font-size: 1.1rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination a, .pagination span {
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #d4b0ff;
+    background: rgba(45, 27, 78, 0.5);
+    transition: all 0.3s ease;
+}
+
+.pagination a:hover {
+    background: #9b59b6;
+    color: white;
+}
+
+.pagination .active {
+    background: #9b59b6;
+    color: white;
+}
+
+.pagination .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

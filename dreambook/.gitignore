@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+env/
+.env
+
+# Flask
+instance/
+.webassets-cache
+
+# База данных
+*.db
+*.sqlite
+*.sqlite3
+
+# Миграции 
+migrations/
+
+# Загруженные файлы
+uploads/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Логи
+*.log

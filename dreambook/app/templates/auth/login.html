@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2 class="auth-title">Вход</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label class="auth-label">Логин</label>
+                <input type="text" name="login" class="auth-input" required>
+            </div>
+            <div class="mb-3">
+                <label class="auth-label">Пароль</label>
+                <input type="password" name="password" class="auth-input" required>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" name="remember" class="form-check-input" id="remember">
+                <label class="form-check-label auth-check-label" for="remember">Запомнить меня</label>
+            </div>
+            <button type="submit" class="auth-btn auth-btn-primary w-100">Войти</button>
+            <div class="auth-footer">
+                Нет аккаунта? <a href="{{ url_for('auth.register') }}" class="auth-link">Зарегистрироваться</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='auth.css') }}">
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mystic-container">
+    <div class="mystic-content">
+        <div class="moon-icon">🌙</div>
+        <h1 class="mystic-title">Книга снов</h1>
+        <div class="mystic-divider"></div>
+        <p class="mystic-subtitle">
+            Ведите дневник сновидений,<br>
+            анализируйте символы и отслеживайте эмоции
+        </p>
+        
+        {% if not current_user.is_authenticated %}
+            <div class="mystic-buttons">
+                <a href="{{ url_for('auth.login') }}" class="mystic-btn mystic-btn-primary">Войти</a>
+                <a href="{{ url_for('auth.register') }}" class="mystic-btn mystic-btn-secondary">Регистрация</a>
+            </div>
+        {% else %}
+            <a href="{{ url_for('profile') }}" class="mystic-btn mystic-btn-primary">Моя книга</a>
+        {% endif %}
+    </div>
+</div>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
