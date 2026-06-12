@@ -88,10 +88,11 @@ def upload_avatar():
         flash('Файл не выбран', 'danger')
         return redirect(url_for('profile'))
 
-    file = request.files['avatar']
-    filename = save_file(file, current_app.config['AVATAR_FOLDER'])
+    file = request.files['avatar'] #Получает загруженный файл из формы
+    filename = save_file(file, current_app.config['AVATAR_FOLDER']) #Сохраняет файл в папку
 
     if filename:
+        #Обновляет поле avatar_url у текущего пользователя
         current_user.avatar_url = f'/uploads/avatars/{filename}'
         db.session.commit()
         flash('Аватар успешно обновлён!', 'success')

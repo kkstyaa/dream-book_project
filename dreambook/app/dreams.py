@@ -13,7 +13,7 @@ bp = Blueprint('dreams', __name__, url_prefix='/dreams')
 @bp.route('/')
 @login_required
 def index():
-    page = request.args.get('page', 1, type=int)
+    page = request.args.get('page', 1, type=int) #номер текущекй страницы
     per_page = 9
     
     query = Dream.query.filter_by(user_id=current_user.user_id)
@@ -34,7 +34,7 @@ def index():
         query = query.filter(Dream.mood == mood_filter)
     
     pagination = query.order_by(Dream.dream_date.desc()).paginate(page=page, per_page=per_page, error_out=False)
-    dreams = pagination.items
+    dreams = pagination.items #список снов только для текущей страницы
     
     return render_template('dreams/index.html', 
                          dreams=dreams, 
@@ -59,9 +59,7 @@ def show(dream_id):
 @login_required
 def new():
     """Создание нового сна"""
-    # Получаем временную сгенерированную картинку из сессии
     temp_generated_image = session.pop('temp_generated_image', None)
-    
     if request.method == 'POST':
         title = request.form.get('title')
         content = request.form.get('content')

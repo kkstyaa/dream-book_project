@@ -1,3 +1,5 @@
+#Этот файл отвечает за сбор, расчёт и хранение статистики пользователя. 
+#Он вызывается после каждого изменения снов (создание, редактирование, удаление).
 from datetime import datetime, timedelta
 from sqlalchemy import func
 from app import db

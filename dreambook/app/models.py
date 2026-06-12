@@ -18,12 +18,14 @@ class User(db.Model, UserMixin):
     created_at = db.Column(db.DateTime, default=datetime.now)
 
     #связи
-    dreams = db.relationship('Dream', backref='author', lazy=True)
-    statistics = db.relationship('Statistic', backref='user', lazy=True)
-    emotion_stats = db.relationship('EmotionStat', backref='user', lazy=True)
-    symbol_stats = db.relationship('SymbolStat', backref='user', lazy=True)
-    generation_requests = db.relationship('GenerationRequest', backref='user', lazy=True)
-    user_images = db.relationship('UserImage', backref='user', lazy=True)
+    dreams = db.relationship('Dream', backref='author', lazy=True, cascade='all, delete-orphan')
+    statistics = db.relationship('Statistic', backref='user', lazy=True, cascade='all, delete-orphan')
+    emotion_stats = db.relationship('EmotionStat', backref='user', lazy=True, cascade='all, delete-orphan')
+    symbol_stats = db.relationship('SymbolStat', backref='user', lazy=True, cascade='all, delete-orphan')
+    generation_requests = db.relationship('GenerationRequest', backref='user', lazy=True, cascade='all, delete-orphan')
+    user_images = db.relationship('UserImage', backref='user', lazy=True, cascade='all, delete-orphan')
+
+
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
@@ -50,7 +52,7 @@ class Dream(db.Model):
     # связи
     dream_symbols = db.relationship('DreamSymbol', backref='dream', lazy=True)
     generated_image = db.relationship('GeneratedImage', backref='dream', uselist=False)
-    user_image = db.relationship('UserImage', backref='dream', uselist=False)
+    user_image = db.relationship('UserImage', backref='dream', uselist=False, cascade='all, delete-orphan')
 
     def __repr__(self):
         return f'<Dream {self.title}>'
@@ -69,8 +71,8 @@ class Symbol(db.Model):
 class DreamSymbol(db.Model):
     __tablename__ = 'dream_symbols'
 
-    dream_id = db.Column(db.Integer, db.ForeignKey('dreams.dream_id'), primary_key=True)
-    symbol_id = db.Column(db.Integer, db.ForeignKey('symbols.symbol_id'), primary_key=True)
+    dream_id = db.Column(db.Integer, db.ForeignKey('dreams.dream_id', ondelete='CASCADE'), primary_key=True)
+    symbol_id = db.Column(db.Integer, db.ForeignKey('symbols.symbol_id', ondelete='CASCADE'), primary_key=True)
 
 
 class Statistic(db.Model):

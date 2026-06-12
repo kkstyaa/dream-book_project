@@ -14,7 +14,7 @@ bp = Blueprint('statistics', __name__, url_prefix='/statistics')
 def index():
     user_id = current_user.user_id
     
-    # Пробуем взять из кэша
+    # Пробуем взять из кэша (из табл statistics)
     cached = Statistic.query.filter_by(user_id=user_id, period='all_time').first()
     
     if cached and cached.data:
@@ -113,13 +113,13 @@ def export_stats():
      .order_by(func.count(DreamSymbol.symbol_id).desc())\
      .limit(5).all()
     
-    si = StringIO()
-    cw = csv.writer(si, delimiter=';')
+    si = StringIO() # создаём буфер в памяти
+    cw = csv.writer(si, delimiter=';') # создаём CSV-писатель
     
     # Общая статистика
-    cw.writerow(['ОБЩАЯ СТАТИСТИКА'])
+    cw.writerow(['ОБЩАЯ СТАТИСТИКА']) # заголовок раздела
     cw.writerow(['Всего снов', total_dreams])
-    cw.writerow(['Средняя оценка настроения', f'{avg_mood:.1f}' if avg_mood else '—'])
+    cw.writerow(['Средняя оценка настроения', f'{avg_mood:.1f}' if avg_mood else '—']) # строка с данными
     cw.writerow(['Самый частый символ', f'{top_symbol_name} ({top_symbol_count} раз)'])
     cw.writerow([])
     
@@ -136,15 +136,16 @@ def export_stats():
     for s in top5_symbols:
         cw.writerow([s.name, s.count])
     
-    output = si.getvalue()
+    output = si.getvalue()  # получаем всю CSV-строку
     try:
-        output_bytes = output.encode('windows-1251')
+        output_bytes = output.encode('windows-1251') # пробуем кодировку Windows (русская)
     except:
-        output_bytes = output.encode('utf-8-sig')
+        output_bytes = output.encode('utf-8-sig')  # если не получилось — UTF-8 с BOM
     
+    #отправка файла в браузер
     return Response(
-        output_bytes,
-        mimetype='text/csv',
+        output_bytes, # содержимое файла
+        mimetype='text/csv', #тип файла
         headers={'Content-Disposition': 'attachment;filename=statistics_export.csv'}
     )
 
