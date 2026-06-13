@@ -9,19 +9,18 @@
 \contentsline {subsection}{\numberline {2.2}Описание функциональности приложения}{13}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Проектирование модели данных}{15}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Разработка макетов страниц}{17}{subsection.2.4}%
-\contentsline {section}{\MakeUppercase []{\numberline {3}Разработка веб-приложения}}{23}{section.3}%
+\contentsline {section}{\MakeUppercase []{Глава 3. Разработка веб-приложения}}{23}{section*.13}%
 \contentsline {subsection}{\numberline {3.1}Модели базы данных}{23}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Аутентификация и личные кабинеты}{23}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}CRUD-интерфейс для управления снами}{23}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Загрузка файлов}{23}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Анализ текста сна}{23}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Агрегация данных и статистика}{23}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}REST API}{23}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Экспорт в PDF}{23}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Панель администратора}{23}{subsection.3.9}%
-\contentsline {section}{\MakeUppercase []{\numberline {4}Оформление итогов работы}}{24}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Git-репозиторий}{24}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Деплой на хостинг}{24}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Оформление отчёта}{24}{subsection.4.3}%
-\contentsline {section}{\MakeUppercase []{ЗАКЛЮЧЕНИЕ}}{25}{subsection.4.3}%
-\contentsline {section}{\MakeUppercase []{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}{26}{subsection.4.3}%
+\contentsline {subsection}{\numberline {3.2}Аутентификация и личные кабинеты}{24}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}CRUD-интерфейс для управления снами}{27}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Загрузка файлов}{30}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Анализ текста сна}{32}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Агрегация данных и статистика}{33}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Экспорт в CSV}{34}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Панель администратора}{35}{subsection.3.8}%
+\contentsline {section}{\MakeUppercase []{\numberline {4}Оформление итогов работы}}{37}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Git-репозиторий}{37}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Деплой на хостинг}{37}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Оформление отчёта}{38}{subsection.4.3}%
+\contentsline {section}{\MakeUppercase []{ЗАКЛЮЧЕНИЕ}}{39}{subsection.4.3}%
+\contentsline {section}{\MakeUppercase []{СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ}}{41}{Item.17}%
